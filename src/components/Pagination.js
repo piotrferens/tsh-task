@@ -1,7 +1,9 @@
 import React from "react";
 
+import * as S from "./styled";
+
 export class Pagination extends React.Component {
-  render() {
-    return <div>Pagination</div>;
-  }
+    render() {
+        return <S.Pagination>Pagination</S.Pagination>;
+    }
 }
