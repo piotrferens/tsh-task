@@ -14,7 +14,14 @@ export class Header extends React.Component {
                         value over £500 made within October.
                     </span>
                 </S.Subtitle>
-                <S.Line />
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
+                    <S.Line />
+                </div>
             </S.Header>
         );
     }

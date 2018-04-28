@@ -12,7 +12,7 @@ export class TableContainer extends React.Component {
     render() {
         const { table } = this.props;
         return (
-            <div>
+            <S.TableContainer>
                 {table.isLoading ? (
                     "Loading..."
                 ) : (
@@ -38,7 +38,7 @@ export class TableContainer extends React.Component {
                         </S.Suppliers>
                     </S.Table>
                 )}
-            </div>
+            </S.TableContainer>
         );
     }
 }
