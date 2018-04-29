@@ -45,7 +45,7 @@ export const SearchBar = glamorous.div({
 
 export const Input = glamorous.input({
     width: 370,
-    height: 30,
+    height: 28,
     margin: 5,
     padding: "0 10px",
     borderRadius: 5,

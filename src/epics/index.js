@@ -15,4 +15,15 @@ const fetchPaymentsEpic = action$ =>
         ),
     );
 
-export default combineEpics(fetchPaymentsEpic);
+const searchSuppliersEpic = action$ =>
+    action$.pipe(
+        ofType(actions.SEARCH_SUPPLIERS),
+        mergeMap(action =>
+            http
+                .get("", { params: action.payload })
+                .then(actions.fetchPaymentsFulfilled)
+                .catch(actions.fetchPaymentsRejected),
+        ),
+    );
+
+export default combineEpics(fetchPaymentsEpic, searchSuppliersEpic);
