@@ -1,8 +1,25 @@
 import { ofType, combineEpics } from "redux-observable";
-import { mergeMap } from "rxjs/operators";
+import { mergeMap, delay, takeUntil, switchMap } from "rxjs/operators";
+import { of, merge } from "rxjs";
 
 import * as actions from "../actions/actions";
 import { http } from "../http";
+
+const setLoadingEpic = action$ =>
+    action$.pipe(
+        ofType(actions.SEARCH_SUPPLIERS, actions.FETCH_PAYMENTS),
+        switchMap(() =>
+            of(actions.startLoading()).pipe(
+                delay(300),
+                takeUntil(
+                    merge(
+                        action$.pipe(ofType(actions.FETCH_PAYMENTS_FULFILLED)),
+                        action$.pipe(ofType(actions.FETCH_PAYMENTS_REJECTED)),
+                    ),
+                ),
+            ),
+        ),
+    );
 
 const fetchPaymentsEpic = action$ =>
     action$.pipe(
@@ -26,4 +43,4 @@ const searchSuppliersEpic = action$ =>
         ),
     );
 
-export default combineEpics(fetchPaymentsEpic, searchSuppliersEpic);
+export default combineEpics(fetchPaymentsEpic, searchSuppliersEpic, setLoadingEpic);

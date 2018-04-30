@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Spinner from "react-svg-spinner";
+import Delay from "react-delay";
 
 import { fetchPayments } from "./actions/actions";
 
@@ -18,10 +20,13 @@ class App extends Component {
             <S.App>
                 <Header />
                 {this.props.isLoading ? (
-                    "SPinner"
+                    <S.SpinnerWrapper>
+                        <Delay wait={200}>
+                            <Spinner size="64px" speed="fast" />
+                        </Delay>
+                    </S.SpinnerWrapper>
                 ) : (
                     <React.Fragment>
-                        {" "}
                         <SearchBar />
                         <Table />
                         <Pagination />

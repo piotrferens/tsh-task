@@ -2,7 +2,7 @@ import queryString from "query-string";
 
 import { FETCH_PAYMENTS_FULFILLED } from "../actions/actions";
 
-export function pagination(state = {}, action) {
+export function pagination(state = { links: [] }, action) {
     switch (action.type) {
         case FETCH_PAYMENTS_FULFILLED:
             const { pagination } = action.payload;

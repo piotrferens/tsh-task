@@ -36,3 +36,19 @@ export const RESET = "RESET";
 export const reset = () => ({
     type: RESET,
 });
+
+export const START_LOADING = "START_LOADING";
+export const startLoading = () => ({
+    type: START_LOADING,
+});
+
+export const SELECT_SUPPLIER = "SELECT_SUPPLIER";
+export const selectSupplier = payload => ({
+    type: SELECT_SUPPLIER,
+    payload,
+});
+
+export const CLOSE_MODAL = "CLOSE_MODAL";
+export const closeModal = () => ({
+    type: CLOSE_MODAL,
+});

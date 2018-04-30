@@ -18,24 +18,21 @@ export class PaginationContainer extends React.Component {
         return (
             <S.PaginationContainer>
                 <S.Pagination>
-                    <button disabled={!pagination.left} onClick={() => this.goTo(-1)}>
-                        LEFT
-                    </button>
+                    <S.PaginationButton onClick={() => (pagination.left ? this.goTo(-1) : null)}>
+                        {"<"}
+                    </S.PaginationButton>
                     {pagination.links.map(link => (
-                        <button
-                            style={{
-                                background:
-                                    pagination.current === link.page ? "coral" : "buttonface",
-                            }}
+                        <S.PaginationButton
+                            isActive={pagination.current === link.page}
                             key={link.page}
                             onClick={() => this.props.searchSuppliers(link.query)}
                         >
-                            {link.page + 1}
-                        </button>
+                            <span> {link.page + 1} </span>
+                        </S.PaginationButton>
                     ))}
-                    <button disabled={!pagination.right} onClick={() => this.goTo(1)}>
-                        RIGHT
-                    </button>
+                    <S.PaginationButton onClick={() => (pagination.right ? this.goTo(1) : null)}>
+                        {">"}
+                    </S.PaginationButton>
                 </S.Pagination>
             </S.PaginationContainer>
         );
