@@ -2,23 +2,14 @@ import React from "react";
 import Modal from "react-responsive-modal";
 
 import * as S from "./styled";
+import { SupplierLogo } from "../static/supplier";
 
 export class ModalSupplier extends React.Component {
     render() {
         const { supplier } = this.props;
         return (
-            <Modal
-                open={!!supplier}
-                onClose={this.props.closeModal}
-                center
-                styles={{
-                    modal: {
-                        width: 800,
-                        background: "linear-gradient(to right, #d3cce3, #e9e4f0)",
-                        borderRadius: 5,
-                    },
-                }}
-            >
+            <Modal open={!!supplier} onClose={this.props.closeModal} center styles={S.modalStyle}>
+                <SupplierLogo />
                 <S.ModalInforamtion>
                     <span>Information about the supplier</span>
                 </S.ModalInforamtion>
