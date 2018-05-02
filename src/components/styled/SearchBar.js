@@ -4,6 +4,29 @@ export const SearchBar = glamorous.div({
     display: "flex",
     justifyContent: "center",
     padding: "5px 0 5px 0",
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        padding: 0,
+        flexDirection: "column",
+    },
+    "@media (max-width: 576px)": {
+        padding: 0,
+        flexDirection: "column",
+    },
+});
+
+export const InputContainer = glamorous.div({
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        marginBottom: 3,
+    },
+    "@media (max-width: 576px)": {
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        marginBottom: 3,
+    },
 });
 
 export const Input = glamorous.input({
@@ -22,6 +45,23 @@ export const Input = glamorous.input({
         fontSize: 12,
         fontWeight: 400,
     },
+
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        width: "99%",
+        margin: "0 auto",
+        padding: 0,
+        textAlign: "center",
+        "::placeholder ": {
+            textAlign: "left",
+            padding: 5,
+        },
+    },
+    "@media (max-width: 576px)": {
+        width: "99%",
+        margin: "0 auto",
+        padding: 0,
+        textAlign: "center",
+    },
 });
 export const SelectContainer = glamorous.div({
     width: 161,
@@ -31,6 +71,16 @@ export const SelectContainer = glamorous.div({
     borderRadius: 5,
     border: "none",
     outline: "none",
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        width: "100%",
+        margin: "0 auto",
+        marginBottom: 3,
+    },
+    "@media (max-width: 576px)": {
+        width: "100%",
+        margin: "0 auto",
+        marginBottom: 3,
+    },
 });
 
 export const Select = glamorous.select({
@@ -47,9 +97,31 @@ export const Select = glamorous.select({
     border: "none",
     outline: "none",
     cursor: "pointer",
+    marginBottom: 5,
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        width: "98%",
+    },
+    "@media (max-width: 576px)": {
+        width: "98%",
+    },
+});
+export const ButtonContainer = glamorous.div({
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        margin: "0 auto",
+        width: "100%",
+        marginBottom: 3,
+    },
+    "@media (max-width: 576px)": {
+        margin: "0 auto",
+        width: "100%",
+        marginBottom: 3,
+    },
 });
 
-export const Reset = glamorous.button({
+export const Reset = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     width: 74,
     height: 30,
     margin: 5,
@@ -63,9 +135,22 @@ export const Reset = glamorous.button({
     border: "none",
     outline: "none",
     cursor: "pointer",
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        width: "99.8%",
+        margin: "0 auto",
+        marginBottom: 3,
+    },
+    "@media (max-width: 576px)": {
+        width: "99.8%",
+        margin: "0 auto",
+        marginBottom: 3,
+    },
 });
 
-export const Search = glamorous.button({
+export const Search = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     width: 80,
     height: 30,
     margin: 5,
@@ -78,4 +163,12 @@ export const Search = glamorous.button({
     border: "none",
     outline: "none",
     cursor: "pointer",
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        width: "99.8%",
+        margin: "0 auto",
+    },
+    "@media (max-width: 576px)": {
+        width: "99.8%",
+        margin: "0 auto",
+    },
 });

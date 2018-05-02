@@ -16,8 +16,36 @@ export const RatingCircleContainer = glamorous.div(props => ({
     boxShadow: props.isActive
         ? "0 1px 1px rgba(0, 0, 0, 0.15)"
         : "0 1px 1px rgba(0, 0, 0, 0.15), inset 0 1px 1px #ffffff",
+    // "@media (min-width: 880px) and (max-width: 992px)": {
+    //     width: 22,
+    //     height: 22,
+    //     fontSize: 13,
+    // },
+    "@media (min-width: 829px) and (max-width: 880px)": {
+        width: 22,
+        height: 22,
+        fontSize: 13,
+    },
+    "@media (min-width: 768px) and (max-width: 829px)": {
+        width: 21,
+        height: 21,
+        fontSize: 13,
+    },
+    "@media (min-width: 576px) and (max-width: 768px)": {
+        width: 21,
+        height: 21,
+        fontSize: 13,
+    },
+    "@media (max-width: 576px)": {
+        width: 14,
+        height: 14,
+        fontSize: 8,
+    },
 }));
 export const RatingCircle = glamorous.span({
     display: "inline-block",
     marginTop: 2,
+    "@media (min-width: 880px) and (max-width: 992px)": {
+        margin: 0,
+    },
 });

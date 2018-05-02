@@ -5,18 +5,10 @@ export class TableHeader extends React.Component {
     render() {
         return (
             <S.TableHeader>
-                <S.HeaderSupplier>
-                    <span>Supplier</span>
-                </S.HeaderSupplier>
-                <S.HeaderRating>
-                    <span>Pound Rating</span>
-                </S.HeaderRating>
-                <S.HeaderRefVal>
-                    <span>Reference</span>
-                </S.HeaderRefVal>
-                <S.HeaderRefVal>
-                    <span>Value</span>
-                </S.HeaderRefVal>
+                <S.HeaderSupplier>Supplier</S.HeaderSupplier>
+                <S.HeaderRating>Pound Rating</S.HeaderRating>
+                <S.HeaderRefVal>Reference</S.HeaderRefVal>
+                <S.HeaderRefVal>Value</S.HeaderRefVal>
             </S.TableHeader>
         );
     }

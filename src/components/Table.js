@@ -21,16 +21,10 @@ export class TableContainer extends React.Component {
                                 key={payment.paymentRef + i}
                                 onClick={() => this.props.selectSupplier(payment)}
                             >
-                                <S.SupplierName>
-                                    <span>{payment.paymentSupplier}</span>
-                                </S.SupplierName>
+                                <S.SupplierName>{payment.paymentSupplier}</S.SupplierName>
                                 <Rating paymentCostRating={payment.paymentCostRating} />
-                                <S.Reference>
-                                    <span>{payment.paymentRef}</span>
-                                </S.Reference>
-                                <S.Value>
-                                    <span>{payment.paymentAmount}</span>
-                                </S.Value>
+                                <S.Reference>{payment.paymentRef}</S.Reference>
+                                <S.Value>{payment.paymentAmount}</S.Value>
                             </S.TableRow>
                         ))}
                     </S.Suppliers>

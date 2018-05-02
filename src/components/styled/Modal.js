@@ -31,5 +31,4 @@ export const ModalText = glamorous.div({
     fontFamily: "Helvetica",
     fontSize: 16,
     fontWeight: 700,
-    textShadow: "1px 1px 1px #b7adad, 1px 1px 1px #908f8f",
 });

@@ -28,13 +28,15 @@ export class SearchBarContainer extends React.Component {
     render() {
         return (
             <S.SearchBar>
-                <S.Input
-                    type="text"
-                    placeholder="Search suppliers"
-                    onChange={this.onChange}
-                    onKeyPress={this.onKeyPress}
-                    value={this.props.search}
-                />
+                <S.InputContainer>
+                    <S.Input
+                        type="text"
+                        placeholder="Search suppliers"
+                        onChange={this.onChange}
+                        onKeyPress={this.onKeyPress}
+                        value={this.props.search}
+                    />
+                </S.InputContainer>
                 <S.SelectContainer>
                     <S.Select
                         value={this.props.rating}
@@ -50,8 +52,12 @@ export class SearchBarContainer extends React.Component {
                         <option value="5">5</option>
                     </S.Select>
                 </S.SelectContainer>
-                <S.Reset onClick={this.onReset}> Reset</S.Reset>
-                <S.Search onClick={this.onClick}> Search </S.Search>
+                <S.ButtonContainer>
+                    <S.Reset onClick={this.onReset}> Reset</S.Reset>
+                </S.ButtonContainer>
+                <S.ButtonContainer>
+                    <S.Search onClick={this.onClick}> Search </S.Search>
+                </S.ButtonContainer>
             </S.SearchBar>
         );
     }

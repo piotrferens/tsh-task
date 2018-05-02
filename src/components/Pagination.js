@@ -20,6 +20,7 @@ export class PaginationContainer extends React.Component {
                 <S.Pagination>
                     <S.PaginationButtonContainer
                         onClick={() => (pagination.left ? this.goTo(-1) : null)}
+                        leftEnd={pagination.leftEnd}
                     >
                         <S.PaginationButton> {"<"}</S.PaginationButton>
                     </S.PaginationButtonContainer>
@@ -33,6 +34,7 @@ export class PaginationContainer extends React.Component {
                         </S.PaginationButtonContainer>
                     ))}
                     <S.PaginationButtonContainer
+                        rightEnd={pagination.rightEnd}
                         onClick={() => (pagination.right ? this.goTo(1) : null)}
                     >
                         <S.PaginationButton> {">"}</S.PaginationButton>
