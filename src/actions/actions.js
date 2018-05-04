@@ -1,17 +1,17 @@
-export const FETCH_PAYMENTS = "FETCH_PAYMENTS";
-export const fetchPayments = () => ({
-    type: FETCH_PAYMENTS,
+export const FETCH_SUPPLIERS = "FETCH_SUPPLIERS";
+export const fetchSuppliers = () => ({
+    type: FETCH_SUPPLIERS,
 });
 
-export const FETCH_PAYMENTS_FULFILLED = "FETCH_PAYMENTS_FULFILLED";
-export const fetchPaymentsFulfilled = payload => ({
-    type: FETCH_PAYMENTS_FULFILLED,
+export const FETCH_SUPPLIERS_FULFILLED = "FETCH_SUPPLIERS_FULFILLED";
+export const fetchSuppliersFulfilled = payload => ({
+    type: FETCH_SUPPLIERS_FULFILLED,
     payload,
 });
 
-export const FETCH_PAYMENTS_REJECTED = "FETCH_PAYMENTS_REJECTED";
-export const fetchPaymentsRejected = () => ({
-    type: FETCH_PAYMENTS_REJECTED,
+export const FETCH_SUPPLIERS_REJECTED = "FETCH_SUPPLIERS_REJECTED";
+export const fetchSuppliersRejected = () => ({
+    type: FETCH_SUPPLIERS_REJECTED,
 });
 
 export const SET_SEARCH = "SET_SEARCH";

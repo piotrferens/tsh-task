@@ -7,28 +7,28 @@ import { http } from "../http";
 
 const setLoadingEpic = action$ =>
     action$.pipe(
-        ofType(actions.SEARCH_SUPPLIERS, actions.FETCH_PAYMENTS),
+        ofType(actions.SEARCH_SUPPLIERS, actions.FETCH_SUPPLIERS),
         switchMap(() =>
             of(actions.startLoading()).pipe(
                 delay(300),
                 takeUntil(
                     merge(
-                        action$.pipe(ofType(actions.FETCH_PAYMENTS_FULFILLED)),
-                        action$.pipe(ofType(actions.FETCH_PAYMENTS_REJECTED)),
+                        action$.pipe(ofType(actions.FETCH_SUPPLIERS_FULFILLED)),
+                        action$.pipe(ofType(actions.FETCH_SUPPLIERS_REJECTED)),
                     ),
                 ),
             ),
         ),
     );
 
-const fetchPaymentsEpic = action$ =>
+const fetchSuppliersEpic = action$ =>
     action$.pipe(
-        ofType(actions.FETCH_PAYMENTS),
+        ofType(actions.FETCH_SUPPLIERS),
         mergeMap(() =>
             http
                 .get()
-                .then(actions.fetchPaymentsFulfilled)
-                .catch(actions.fetchPaymentsRejected),
+                .then(actions.fetchSuppliersFulfilled)
+                .catch(actions.fetchSuppliersRejected),
         ),
     );
 
@@ -38,9 +38,9 @@ const searchSuppliersEpic = action$ =>
         mergeMap(action =>
             http
                 .get("", { params: action.payload })
-                .then(actions.fetchPaymentsFulfilled)
-                .catch(actions.fetchPaymentsRejected),
+                .then(actions.fetchSuppliersFulfilled)
+                .catch(actions.fetchSuppliersRejected),
         ),
     );
 
-export default combineEpics(fetchPaymentsEpic, searchSuppliersEpic, setLoadingEpic);
+export default combineEpics(fetchSuppliersEpic, searchSuppliersEpic, setLoadingEpic);

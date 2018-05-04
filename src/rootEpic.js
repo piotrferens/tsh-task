@@ -1,5 +1,5 @@
 import { combineEpics } from "redux-observable";
 
-import paymentsEpic from "./epics";
+import suppliersEpic from "./epics";
 
-export const rootEpic = combineEpics(paymentsEpic);
+export const rootEpic = combineEpics(suppliersEpic);

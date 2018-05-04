@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "react-responsive-modal";
 
 import * as S from "./styled";
-import { SupplierLogo } from "../static/supplier";
+import { SupplierLogo } from "./SupplierLogo";
 
 export class ModalSupplier extends React.Component {
     render() {
@@ -23,7 +23,7 @@ export class ModalSupplier extends React.Component {
                     <span>Reference: {supplier.paymentCostRating} </span>
                 </S.ModalText>
                 <S.ModalText>
-                    <span>Value: {supplier.paymentAmount}</span>{" "}
+                    <span>Value: {supplier.paymentAmount}</span>
                 </S.ModalText>
             </Modal>
         );

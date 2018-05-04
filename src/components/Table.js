@@ -16,15 +16,15 @@ export class TableContainer extends React.Component {
                 <S.Table>
                     <TableHeader />
                     <S.Suppliers>
-                        {table.payments.map((payment, i) => (
+                        {table.suppliers.map((supplier, i) => (
                             <S.TableRow
-                                key={payment.paymentRef + i}
-                                onClick={() => this.props.selectSupplier(payment)}
+                                key={supplier.paymentRef + i}
+                                onClick={() => this.props.selectSupplier(supplier)}
                             >
-                                <S.SupplierName>{payment.paymentSupplier}</S.SupplierName>
-                                <Rating paymentCostRating={payment.paymentCostRating} />
-                                <S.Reference>{payment.paymentRef}</S.Reference>
-                                <S.Value>{payment.paymentAmount}</S.Value>
+                                <S.SupplierName>{supplier.paymentSupplier}</S.SupplierName>
+                                <Rating paymentCostRating={supplier.paymentCostRating} />
+                                <S.Reference>{supplier.paymentRef}</S.Reference>
+                                <S.Value>{supplier.paymentAmount}</S.Value>
                             </S.TableRow>
                         ))}
                     </S.Suppliers>

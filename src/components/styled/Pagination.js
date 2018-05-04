@@ -4,11 +4,12 @@ export const PaginationContainer = glamorous.div({
     display: "flex",
     justifyContent: "center",
     marginTop: 20,
-    "@media (min-width: 576px) and (max-width: 768px)": {
+    "@media (max-width: 768px)": {
         marginTop: 5,
     },
-    "@media (max-width: 576px)": {
-        marginTop: 5,
+    "@media (max-width: 334px)": {
+        marginTop: 0,
+        marginBottom: 5,
     },
 });
 export const Pagination = glamorous.div({
@@ -16,6 +17,9 @@ export const Pagination = glamorous.div({
     maxWidth: 372,
     "@media (max-width: 576px)": {
         maxWidth: 324,
+    },
+    "@media (max-width: 334px)": {
+        maxWidth: 320,
     },
 });
 

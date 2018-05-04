@@ -4,6 +4,9 @@ export const Header = glamorous.div({
     "@media (max-width: 576px)": {
         marginTop: 25,
     },
+    "@media (max-width: 334px)": {
+        marginTop: 0,
+    },
 });
 
 export const Title = glamorous.div({
@@ -19,7 +22,9 @@ export const Title = glamorous.div({
     "@media (max-width: 576px)": {
         fontSize: 36,
         textAlign: "center",
-        marginTop: 20,
+    },
+    "@media (max-width: 334px)": {
+        fontSize: 28,
     },
 });
 
@@ -34,12 +39,9 @@ export const Subtitle = glamorous.div({
     "@media (min-width: 768px) and (max-width: 992px)": {
         fontSize: 16,
     },
-    "@media (min-width: 576px) and (max-width: 768px)": {
+    "@media (max-width: 768px)": {
         fontSize: 12,
-    },
-    "@media (max-width: 576px)": {
         textAlign: "center",
-        fontSize: 12,
     },
 });
 

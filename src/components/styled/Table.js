@@ -1,6 +1,5 @@
 import glamorous from "glamorous";
 
-const paddingTableCell = 20;
 const marginTableHeader = "5px 0";
 
 export const TableContainer = glamorous.div({
@@ -16,6 +15,9 @@ export const TableContainer = glamorous.div({
         width: "100%",
         minHeight: 285,
     },
+    "@media (max-width: 334px)": {
+        minHeight: 275,
+    },
 });
 
 export const Table = glamorous.div({
@@ -27,11 +29,9 @@ export const Table = glamorous.div({
     border: "1px solid #dcdcdc",
     "@media (min-width: 576px) and (max-width: 768px)": {
         width: 768,
-        margin: "0 auto",
     },
     "@media (max-width: 576px)": {
         width: 576,
-        margin: "0 auto",
         fontSize: 11,
     },
 });
@@ -44,7 +44,7 @@ export const TableHeader = glamorous.div({
 
 export const HeaderSupplier = glamorous.div({
     flex: 6,
-    padding: paddingTableCell,
+    padding: 20,
     margin: marginTableHeader,
     "@media (max-width: 576px)": {
         padding: 15,
@@ -93,7 +93,7 @@ export const TableRow = glamorous.div({
 export const SupplierName = glamorous.div({
     flex: 6,
     borderRight: "1px solid #e0e0e0",
-    padding: paddingTableCell,
+    padding: 20,
     "@media (max-width: 576px)": {
         padding: 15,
     },
@@ -135,4 +135,14 @@ export const Value = glamorous.div({
     "@media (max-width: 576px)": {
         padding: 0,
     },
+});
+
+export const Error = glamorous.div({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    fontFamily: "Helvetica",
+    fontSize: 38,
+    minHeight: 324,
 });

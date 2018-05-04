@@ -4,24 +4,14 @@ export const SearchBar = glamorous.div({
     display: "flex",
     justifyContent: "center",
     padding: "5px 0 5px 0",
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        padding: 0,
-        flexDirection: "column",
-    },
-    "@media (max-width: 576px)": {
+    "@media  (max-width: 768px)": {
         padding: 0,
         flexDirection: "column",
     },
 });
 
 export const InputContainer = glamorous.div({
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        display: "flex",
-        justifyContent: "center",
-        width: "100%",
-        marginBottom: 3,
-    },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 768px)": {
         display: "flex",
         justifyContent: "center",
         width: "100%",
@@ -45,18 +35,7 @@ export const Input = glamorous.input({
         fontSize: 12,
         fontWeight: 400,
     },
-
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        width: "99%",
-        margin: "0 auto",
-        padding: 0,
-        textAlign: "center",
-        "::placeholder ": {
-            textAlign: "left",
-            padding: 5,
-        },
-    },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 768px)": {
         width: "99%",
         margin: "0 auto",
         padding: 0,
@@ -71,12 +50,7 @@ export const SelectContainer = glamorous.div({
     borderRadius: 5,
     border: "none",
     outline: "none",
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        width: "100%",
-        margin: "0 auto",
-        marginBottom: 3,
-    },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 768px)": {
         width: "100%",
         margin: "0 auto",
         marginBottom: 3,
@@ -98,20 +72,12 @@ export const Select = glamorous.select({
     outline: "none",
     cursor: "pointer",
     marginBottom: 5,
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        width: "98%",
-    },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 768px)": {
         width: "98%",
     },
 });
 export const ButtonContainer = glamorous.div({
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        margin: "0 auto",
-        width: "100%",
-        marginBottom: 3,
-    },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 768px)": {
         margin: "0 auto",
         width: "100%",
         marginBottom: 3,
@@ -135,12 +101,7 @@ export const Reset = glamorous.div({
     border: "none",
     outline: "none",
     cursor: "pointer",
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        width: "99.8%",
-        margin: "0 auto",
-        marginBottom: 3,
-    },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 768px)": {
         width: "99.8%",
         margin: "0 auto",
         marginBottom: 3,
@@ -163,11 +124,7 @@ export const Search = glamorous.div({
     border: "none",
     outline: "none",
     cursor: "pointer",
-    "@media (min-width: 576px) and (max-width: 768px)": {
-        width: "99.8%",
-        margin: "0 auto",
-    },
-    "@media (max-width: 576px)": {
+    "@media (max-width: 768px)": {
         width: "99.8%",
         margin: "0 auto",
     },

@@ -8,9 +8,9 @@ export function Rating(props) {
     return (
         <S.Rating>
             {rating.map(x => (
-                <S.RatingCircleContainer key={x} isActive={rate >= x}>
-                    <S.RatingCircle>£</S.RatingCircle>
-                </S.RatingCircleContainer>
+                <S.RatingCircle key={x} isActive={rate >= x}>
+                    £
+                </S.RatingCircle>
             ))}
         </S.Rating>
     );

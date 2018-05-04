@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import { table } from "./reducers/payments";
+import { table } from "./reducers/suppliers";
 import { pagination } from "./reducers/pagination";
 import { search } from "./reducers/search";
 import { rating } from "./reducers/rating";

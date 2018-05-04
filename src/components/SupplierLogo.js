@@ -1,19 +1,12 @@
 import React from "react";
+import glamorous from "glamorous";
 
 export const SupplierLogo = () => (
-    <div
-        style={{
-            display: "flex",
-            justifyContent: "center",
-        }}
-    >
+    <glamorous.Div display="flex" justifyContent="center">
         <svg
             version="1.1"
-            id="Layer_1"
             xlns="http://www.w3.org/2000/svg"
             xlinkHref="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
             viewBox="0 0 512.003 512.003"
             style={{ enableBackground: "new 0 0 512.003 512.003" }}
             xmlSpace="preserve"
@@ -114,21 +107,6 @@ export const SupplierLogo = () => (
                 d="M370.755,494.346h-61.79c-4.875,0-8.827,3.952-8.827,8.827v8.827h79.444v-8.827
 	C379.582,498.299,375.629,494.346,370.755,494.346z"
             />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
-            <g />
         </svg>
-    </div>
+    </glamorous.Div>
 );

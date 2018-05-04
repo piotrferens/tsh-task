@@ -11,7 +11,7 @@ export class Header extends React.Component {
                 </S.Title>
                 <S.Subtitle>
                     <span>
-                        Payments made by Chichester District Council to individual suppliers with a
+                        Suppliers made by Chichester District Council to individual suppliers with a
                         value over £500 made within October.
                     </span>
                 </S.Subtitle>

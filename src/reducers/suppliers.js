@@ -1,18 +1,17 @@
 import {
-    FETCH_PAYMENTS_FULFILLED,
-    FETCH_PAYMENTS,
-    FETCH_PAYMENTS_REJECTED,
+    FETCH_SUPPLIERS_FULFILLED,
+    FETCH_SUPPLIERS_REJECTED,
     START_LOADING,
     SELECT_SUPPLIER,
     CLOSE_MODAL,
 } from "../actions/actions";
 import { combineReducers } from "redux";
 
-function payments(state = [], action) {
+function suppliers(state = [], action) {
     switch (action.type) {
-        case FETCH_PAYMENTS_REJECTED:
+        case FETCH_SUPPLIERS_REJECTED:
             return [];
-        case FETCH_PAYMENTS_FULFILLED:
+        case FETCH_SUPPLIERS_FULFILLED:
             return action.payload.payments;
         default:
             return state;
@@ -21,10 +20,9 @@ function payments(state = [], action) {
 
 function isLoading(state = false, action) {
     switch (action.type) {
-        case FETCH_PAYMENTS_FULFILLED:
-        case FETCH_PAYMENTS_REJECTED:
+        case FETCH_SUPPLIERS_FULFILLED:
+        case FETCH_SUPPLIERS_REJECTED:
             return false;
-        case FETCH_PAYMENTS:
         case START_LOADING:
             return true;
         default:
@@ -43,8 +41,20 @@ function selectedSupplier(state = null, action) {
     }
 }
 
+function error(state = false, action) {
+    switch (action.type) {
+        case FETCH_SUPPLIERS_REJECTED:
+            return true;
+        case FETCH_SUPPLIERS_FULFILLED:
+            return false;
+        default:
+            return state;
+    }
+}
+
 export const table = combineReducers({
-    payments,
+    suppliers,
     isLoading,
     selectedSupplier,
+    error,
 });

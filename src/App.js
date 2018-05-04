@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Spinner from "react-svg-spinner";
-import Delay from "react-delay";
 
-import { fetchPayments } from "./actions/actions";
+import { fetchSuppliers } from "./actions/actions";
 
 import { Header } from "./components/Header";
 import { SearchBar } from "./components/SearchBar";
@@ -13,24 +12,24 @@ import * as S from "./components/styled";
 
 class App extends Component {
     componentDidMount() {
-        this.props.fetchPayments();
+        this.props.fetchSuppliers();
     }
     render() {
         return (
             <S.App>
                 <Header />
+                <SearchBar />
                 {this.props.isLoading ? (
                     <S.SpinnerWrapper>
-                        <Delay wait={200}>
-                            <Spinner size="64px" speed="fast" />
-                        </Delay>
+                        <Spinner size="64px" speed="fast" />
                     </S.SpinnerWrapper>
-                ) : (
+                ) : !this.props.error ? (
                     <React.Fragment>
-                        <SearchBar />
                         <Table />
                         <Pagination />
                     </React.Fragment>
+                ) : (
+                    <S.Error>No results found</S.Error>
                 )}
             </S.App>
         );
@@ -40,7 +39,8 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
         isLoading: state.table.isLoading,
+        error: state.table.error,
     };
 }
 
-export default connect(mapStateToProps, { fetchPayments })(App);
+export default connect(mapStateToProps, { fetchSuppliers })(App);
