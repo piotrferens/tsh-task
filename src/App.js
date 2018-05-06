@@ -14,32 +14,36 @@ class App extends Component {
     componentDidMount() {
         this.props.fetchSuppliers();
     }
+
     render() {
+        const { isLoading, error, showTable } = this.props;
         return (
             <S.App>
                 <Header />
                 <SearchBar />
-                {this.props.isLoading ? (
+                {isLoading ? (
                     <S.SpinnerWrapper>
                         <Spinner size="64px" speed="fast" />
                     </S.SpinnerWrapper>
-                ) : !this.props.error ? (
-                    <React.Fragment>
-                        <Table />
-                        <Pagination />
-                    </React.Fragment>
                 ) : (
-                    <S.Error>No results found</S.Error>
+                    showTable && (
+                        <React.Fragment>
+                            <Table />
+                            <Pagination />
+                        </React.Fragment>
+                    )
                 )}
+                {error && <S.Error>No results found</S.Error>}
             </S.App>
         );
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ table }) {
     return {
-        isLoading: state.table.isLoading,
-        error: state.table.error,
+        isLoading: table.isLoading,
+        error: table.error,
+        showTable: !table.error && table.suppliers.length > 0,
     };
 }
 
